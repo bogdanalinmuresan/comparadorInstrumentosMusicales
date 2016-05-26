@@ -9,11 +9,11 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Hello App Engine</title>
+    <title>Comparador Instrumentos Musicales</title>
   </head>
 
   <body>
-    <h1>Hello App Engine!</h1>
+    <h1>Comparador</h1>
 	
     <table>
       <tr>
@@ -23,5 +23,11 @@
         <td><a href="comparador">Comparador</a></td>
       </tr>
     </table>
+    <div>
+    	<form action="/comparador">
+    		<input type="submit" value="Buscar por palabras clave">
+  			<input type="text" name="keywords" size="13" value="">
+    	</form>
+    </div>
   </body>
 </html>
