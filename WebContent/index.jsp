@@ -5,10 +5,17 @@
 <!-- "Quirks Mode". Replacing this declaration     -->
 <!-- with a "Standards Mode" doctype is supported, -->
 <!-- but may lead to some differences in layout.   -->
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+ 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/comparador/css/estilo.css" type="text/css">
     <title>Comparador Instrumentos Musicales</title>
   </head>
 
@@ -28,6 +35,26 @@
     		<input type="submit" value="Buscar por palabras clave">
   			<input type="text" name="keywords" size="13" value="">
     	</form>
+    	<div>
+    		<table>
+				<c:forEach items="${articulosEbay}" var="resu">
+					<tr>
+						<div id="elemento">
+					    	<td><c:out value="${resu.itemId}" /></td>
+					    	<td><c:out value="${resu.title}" /></td>
+					    	<td><c:out value="${resu.currentPrice}" /></td>
+					    	<td><c:out value="${resu.galleryUrl}" /></td> 
+				    	</div>
+				   	</tr>
+				</c:forEach>
+			</table>
+    	</div>
+    	
+    	<h3>
+  <c:forEach var="author" items="${book.authors}">     
+    <c:out value="${author}" /><br/>      
+  </c:forEach>
+  </h3>
     </div>
   </body>
 </html>

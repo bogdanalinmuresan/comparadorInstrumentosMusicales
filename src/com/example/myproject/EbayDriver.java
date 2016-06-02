@@ -2,6 +2,9 @@ package com.example.myproject;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
@@ -11,6 +14,7 @@ import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import com.example.myproject.BookInfo;
 
 import com.example.myproject.URLReader;
 
@@ -26,10 +30,11 @@ public class EbayDriver {
     public final static int REQUEST_DELAY = 3000;
     public final static int MAX_RESULTS = 10;
     private int maxResults;
+    private List<BookInfo> res;
 
     public EbayDriver() {
         this.maxResults = MAX_RESULTS;
-
+        res=new ArrayList<BookInfo>();
     }
 
     public EbayDriver(int maxResults) {
@@ -40,16 +45,17 @@ public class EbayDriver {
         return IDriver.EBAY_DRIVER;
     }
 */
-    public void run(String tag) throws Exception {
+    public List<BookInfo> run(String tag) throws Exception {
 
         String address = createAddress(tag);
         print("sending request to :: ", address);
         String response = URLReader.read(address);
         print("response :: ", response);
         //process xml dump returned from EBAY
-        processResponse(response);
+        
         //Honor rate limits - wait between results
         Thread.sleep(REQUEST_DELAY);
+        return processResponse(response);
 
 
     }
@@ -69,9 +75,9 @@ public class EbayDriver {
 
     }
 
-    private void processResponse(String response) throws Exception {
+    private List<BookInfo> processResponse(String response) throws Exception {
 
-
+    	String[] items=new String[50];
         XPath xpath = XPathFactory.newInstance().newXPath();
         InputStream is = new ByteArrayInputStream(response.getBytes("UTF-8"));
         DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
@@ -98,17 +104,24 @@ public class EbayDriver {
             String title = (String) xpath.evaluate("title", node, XPathConstants.STRING);
             String itemUrl = (String) xpath.evaluate("viewItemURL", node, XPathConstants.STRING);
             String galleryUrl = (String) xpath.evaluate("galleryURL", node, XPathConstants.STRING);
-
             String currentPrice = (String) xpath.evaluate("sellingStatus/currentPrice", node, XPathConstants.STRING);
 
             print("currentPrice", currentPrice);
             print("itemId", itemId);
             print("title", title);
             print("galleryUrl", galleryUrl);
+            
+            BookInfo book=new BookInfo();
+            book.set(itemUrl, title, currentPrice, galleryUrl);
+            res.add(book);
+            
+            
+            
 
         }
 
         is.close();
+		return res;
 
     }
 
