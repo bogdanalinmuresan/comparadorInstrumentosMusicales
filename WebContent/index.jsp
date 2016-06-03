@@ -405,7 +405,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
     	<div>
     	
     	<div class="w3-section">
-		  <div id="columnaEbay" class="w3-col s4 w3-center">
+		  <div id="columnaEbay" >
 		  		<c:forEach items="${articulosEbay}" var="resuEbay">
 			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px" >
 		                <a href="${resuEbay.urlImag}">
@@ -427,7 +427,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  		</c:forEach>
 		  </div>
 		  
-		  <div id="columnaAmazon" class="w3-col s4  w3-center">
+		  <div id="columnaAmazon">
 		  		
 		  		<c:forEach items="${articulosAmazon}" var="resuAmazon">
 			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px"">
@@ -450,7 +450,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  		</c:forEach>
 		  		
 		  </div>
-		  <div id="columnaFnac" class="w3-col s4 w3-center">
+		  <div id="columnaFnac" >
 		  		
 		  		<c:forEach items="${articulosFnac}" var="resuFnac">
 			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px">
