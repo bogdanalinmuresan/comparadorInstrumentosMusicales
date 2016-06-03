@@ -476,10 +476,6 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  	</div>
 		  	
 		  </div>
-		
-    		
-    
 
-   
   </body>
 </html>

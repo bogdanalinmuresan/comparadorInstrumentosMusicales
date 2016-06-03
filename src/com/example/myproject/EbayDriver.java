@@ -19,7 +19,7 @@ import com.example.myproject.BookInfo;
 import com.example.myproject.URLReader;
 
 public class EbayDriver {
-	public final static String EBAY_APP_ID = "BogdanMu-comparad-PRD-64d8cb02c-e823b429";
+	public final static String EBAY_APP_ID = "clave";
     public final static String EBAY_FINDING_SERVICE_URI = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME="
             + "{operation}&SERVICE-VERSION={version}&SECURITY-APPNAME="
             + "{applicationId}&GLOBAL-ID={globalId}&keywords={keywords}"
