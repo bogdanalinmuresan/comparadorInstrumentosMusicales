@@ -388,16 +388,11 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 
   <body>
     <div class="w3-container w3-center w3-padding-16"" >
-	  <div class="w3-tag w3-jumbo w3-red">C</div>
-	  <div class="w3-tag w3-jumbo">o</div>
-	  <div class="w3-tag w3-jumbo w3-yellow">m</div>
-	  <div class="w3-tag w3-jumbo">p</div>
-	  <div class="w3-tag w3-jumbo w3-red">a</div>
-	  <div class="w3-tag w3-jumbo">r</div>
-	  <div class="w3-tag w3-jumbo w3-yellow">a</div>
-	  <div class="w3-tag w3-jumbo">d</div>
-	  <div class="w3-tag w3-jumbo w3-red">o</div>
-	  <div class="w3-tag w3-jumbo">r</div>
+	  <div class="w3-tag w3-round w3-green" style="padding:3px">
+		  <div class="w3-tag w3-round w3-green w3-border w3-border-white">
+		    Comparador de Instrumentos Musicales
+		  </div>
+	</div>
 	</div>
 	
 	
@@ -409,21 +404,22 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
     	</form>
     	<div>
     	
-    	<div class="w3-row">
+    	<div class="w3-section">
 		  <div id="columnaEbay" class="w3-col s4 w3-center">
-		  		<div class="w3-tag w3-xlarge w3-orange">Ebay</div>
-		  		
 		  		<c:forEach items="${articulosEbay}" var="resuEbay">
 			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px" >
-		                <a href="${resuEbay.galleryUrl}">
+		                <a href="${resuEbay.urlImag}">
 		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
 		                        <header class="w3-container w3-light-grey">
-		                            <p>"${resuEbay.title}"</p>
+		                            <p>${resuEbay.title}</p>
 		                        </header>
-		                        <img src="${resuEbay.urlImag}" alt="blabla" width=160 height=160" >
+		                        <img src="${resuEbay.galleryUrl}" alt="blabla" width=160 height=160" >
 		
-		                        <div class="w3-container w3-red">
-		                            <p>Precio:${resuEbay.currentPrice} euros</p>
+		                        <div class="w3-container ">
+		                        <p>Ebay</p>
+		                            <div class="w3-tag w3-jumbo w3-green">
+									  <span class="w3-large">Precio:${resuEbay.currentPrice} euros</span>
+									</div>
 		                        </div>
 		                    </div>
 		                </a>
@@ -432,18 +428,21 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  </div>
 		  
 		  <div id="columnaAmazon" class="w3-col s4  w3-center">
-		  		<div class="w3-tag w3-xlarge w3-orange">Amazon</div>
+		  		
 		  		<c:forEach items="${articulosAmazon}" var="resuAmazon">
 			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px"">
 		                <a href="${resuAmazon.galleryUrl}">
 		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
 		                        <header class="w3-container w3-light-grey">
-		                            <p>"${resuAmazon.title}"</p>
+		                            <p>${resuAmazon.title}</p>
 		                        </header>
 		                        <img src="${resuAmazon.urlImag}" alt="blabla" width=160 height=160">
 		
-		                        <div class="w3-container w3-red">
-		                            <p>Precio:${resuAmazon.currentPrice} euros</hp>
+		                        <div class="w3-container">
+		                        	<p>Amazon</p>
+		                            <div class="w3-tag w3-jumbo w3-green">
+									  <span class="w3-large">Precio:${resuAmazon.currentPrice} euros</span>
+									</div>
 		                        </div>
 		                    </div>
 		                </a>
@@ -452,19 +451,21 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  		
 		  </div>
 		  <div id="columnaFnac" class="w3-col s4 w3-center">
-		  		<div class="w3-tag w3-xlarge w3-orange">Fnac</div>
 		  		
 		  		<c:forEach items="${articulosFnac}" var="resuFnac">
 			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px">
 		                <a href="${resuFnac.galleryUrl}">
 		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
 		                        <header class="w3-container w3-light-grey">
-		                            <p>"${resuFnac.title}"</p>
+		                            <p>${resuFnac.title}</p>
 		                        </header>
 		                        <img src="${resuFnac.urlImag}" alt="blabla" width=160 height=160">
 		
-		                        <div class="w3-container w3-red">
-		                            <p>Precio:${resuFnac.currentPrice} euros</p>
+		                        <div class="w3-container ">
+		                        	<p>Fnac</p>
+		                            <div class="w3-tag w3-jumbo w3-green">
+									  <span class="w3-large">Precio:${resuFnac.currentPrice} </span>
+									</div>
 		                        </div>
 		                    </div>
 		                </a>

@@ -65,14 +65,14 @@ public class amazonDrive {
            Document document = getHtmlDocument(url);
 		
            // Busco todas las historias de meneame que estan dentro de: 
-           Elements entradas = document.select("li.s-result-item");
+           Elements entradas = document.select(".s-result-item");
 		
            // Paseo cada una de las entradas
            for (Element elem : entradas) {
                String url = elem.getElementsByClass("a-link-normal").attr("href");
                
                String titulo = elem.select(".a-link-normal").attr("title");
-               String precio = elem.select(".a-size-base").text();
+               String precio = elem.select(".a-size-base.a-color-price.s-price.a-text-bold").text();
                
                String urlImag = elem.select(".a-link-normal img").attr("src");
                
