@@ -387,7 +387,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
   </head>
 
   <body>
-    <div class="w3-container w3-center w3-padding-16"" >
+    <div class="w3-container w3-center w3-padding-16" >
 	  <div class="w3-tag w3-round w3-green" style="padding:3px">
 		  <div class="w3-tag w3-round w3-green w3-border w3-border-white">
 		    Comparador de Instrumentos Musicales
@@ -398,25 +398,28 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 	
     <div>
     	<form action="/comparador">
-    		
-  			<input class="w3-input w3-border w3-round-xxlarge" placeholder="Intruduzca la consulta"  type="text" name="keywords" size="13" value="">
-  			
+    		<div class="w3-container w3-center w3-margin" >
+  				<input class="w3-input w3-border w3-round-xxlarge" placeholder="Intruduzca la consulta"  type="text" name="keywords"  value="">
+  			</div>
+  			<div class="w3-container w3-center w3-margin" >
+  				<input class="w3-btn w3-white w3-border w3-border-green w3-round-xlarge " type="submit" value="Buscar" >
+    		<div>
     	</form>
-    	<div>
+    </div>
     	
-    	<div class="w3-section">
-		  <div id="columnaEbay" >
+    	<div class="w3-row">
+		  	<div class="w3-container w3-third" >
 		  		<c:forEach items="${articulosEbay}" var="resuEbay">
-			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px" >
+			  		<div class="w3-container " >
 		                <a href="${resuEbay.urlImag}">
-		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
+		                    <div class="w3-card-12 w3-hover-shadow">
 		                        <header class="w3-container w3-light-grey">
 		                            <p>${resuEbay.title}</p>
 		                        </header>
 		                        <img src="${resuEbay.galleryUrl}" alt="blabla" width=160 height=160" >
 		
 		                        <div class="w3-container ">
-		                        <p>Ebay</p>
+		                        	<p>Ebay</p>
 		                            <div class="w3-tag w3-jumbo w3-green">
 									  <span class="w3-large">Precio:${resuEbay.currentPrice} euros</span>
 									</div>
@@ -427,10 +430,10 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  		</c:forEach>
 		  </div>
 		  
-		  <div id="columnaAmazon">
-		  		
+		
+		  	<div class="w3-container w3-third" >
 		  		<c:forEach items="${articulosAmazon}" var="resuAmazon">
-			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px"">
+			  		<div class="w3-container" >
 		                <a href="${resuAmazon.galleryUrl}">
 		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
 		                        <header class="w3-container w3-light-grey">
@@ -448,12 +451,11 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		                </a>
 	           	 	</div>
 		  		</c:forEach>
-		  		
-		  </div>
-		  <div id="columnaFnac" >
-		  		
+		  	</div>
+		  
+		  <div class="w3-container w3-third" >
 		  		<c:forEach items="${articulosFnac}" var="resuFnac">
-			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px">
+			  		<div class="w3-container" >
 		                <a href="${resuFnac.galleryUrl}">
 		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
 		                        <header class="w3-container w3-light-grey">
@@ -471,12 +473,13 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		                </a>
 	           	 	</div>
 		  		</c:forEach>
-		  		
+		  	</div>
+		  	
 		  </div>
-		</div>
+		
     		
-    	</div>
+    
 
-    </div>
+   
   </body>
 </html>
