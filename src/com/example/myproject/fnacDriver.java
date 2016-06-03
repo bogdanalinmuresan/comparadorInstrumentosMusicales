@@ -69,7 +69,7 @@ public class fnacDriver {
            // Paseo cada una de las entradas
            for (Element elem : entradas) {
                String titulo = elem.select(".lienInverse.title").text();
-               String precio = elem.select(".pdg_t_sm.pdg_b_sm").text();
+               String precio = elem.select(".prix").text();
                
                String url = elem.select(".lienInverse a").attr("href");
               
