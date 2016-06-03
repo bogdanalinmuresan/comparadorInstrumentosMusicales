@@ -414,16 +414,16 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  		<div class="w3-tag w3-xlarge w3-orange">Ebay</div>
 		  		
 		  		<c:forEach items="${articulosEbay}" var="resuEbay">
-			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar">
+			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px" >
 		                <a href="${resuEbay.galleryUrl}">
 		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
 		                        <header class="w3-container w3-light-grey">
-		                            <h4>Precio:${resuEbay.currentPrice} euros</h4>
-		                        </header>
-		                        <img src="${resuEbay.urlImag}" alt="blabla" style="width:100%">
-		
-		                        <div class="w3-container w3-justify">
 		                            <p>"${resuEbay.title}"</p>
+		                        </header>
+		                        <img src="${resuEbay.urlImag}" alt="blabla" width=160 height=160" >
+		
+		                        <div class="w3-container w3-red">
+		                            <p>Precio:${resuEbay.currentPrice} euros</p>
 		                        </div>
 		                    </div>
 		                </a>
@@ -434,16 +434,16 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  <div id="columnaAmazon" class="w3-col s4  w3-center">
 		  		<div class="w3-tag w3-xlarge w3-orange">Amazon</div>
 		  		<c:forEach items="${articulosAmazon}" var="resuAmazon">
-			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar">
+			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px"">
 		                <a href="${resuAmazon.galleryUrl}">
 		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
 		                        <header class="w3-container w3-light-grey">
-		                            <h4>Precio:${resuAmazon.currentPrice} euros</h4>
-		                        </header>
-		                        <img src="${resuAmazon.urlImag}" alt="blabla" style="width:100%">
-		
-		                        <div class="w3-container w3-justify">
 		                            <p>"${resuAmazon.title}"</p>
+		                        </header>
+		                        <img src="${resuAmazon.urlImag}" alt="blabla" width=160 height=160">
+		
+		                        <div class="w3-container w3-red">
+		                            <p>Precio:${resuAmazon.currentPrice} euros</hp>
 		                        </div>
 		                    </div>
 		                </a>
@@ -455,16 +455,16 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  		<div class="w3-tag w3-xlarge w3-orange">Fnac</div>
 		  		
 		  		<c:forEach items="${articulosFnac}" var="resuFnac">
-			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar">
+			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar" style="width:400px;height:400px">
 		                <a href="${resuFnac.galleryUrl}">
 		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
 		                        <header class="w3-container w3-light-grey">
-		                            <h4>Precio:${resuFnac.currentPrice} euros</h4>
-		                        </header>
-		                        <img src="${resuFnac.urlImag}" alt="blabla" style="width:100%">
-		
-		                        <div class="w3-container w3-justify">
 		                            <p>"${resuFnac.title}"</p>
+		                        </header>
+		                        <img src="${resuFnac.urlImag}" alt="blabla" width=160 height=160">
+		
+		                        <div class="w3-container w3-red">
+		                            <p>Precio:${resuFnac.currentPrice} euros</p>
 		                        </div>
 		                    </div>
 		                </a>
@@ -473,25 +473,9 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 		  		
 		  </div>
 		</div>
-    		<table>
-				<c:forEach items="${articulosEbay}" var="resuEbay">
-					<tr>
-						
-					    	<td><c:out value="${resuEbay.itemId}" /></td>
-					    	<td><c:out value="${resuEbay.title}" /></td>
-					    	<td><c:out value="${resuEbay.currentPrice}" /></td>
-					    	<td><c:out value="${resuEbay.galleryUrl}" /></td> 
-				    
-				   	</tr>
-				</c:forEach>
-			</table>
+    		
     	</div>
-    	
-    	<h3>
-  <c:forEach var="author" items="${book.authors}">     
-    <c:out value="${author}" /><br/>      
-  </c:forEach>
-  </h3>
+
     </div>
   </body>
 </html>
