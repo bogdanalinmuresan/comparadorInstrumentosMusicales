@@ -17,7 +17,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="/comparador/css/estilo.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet"  href="<c:url value="http://www.w3schools.com/lib/w3.css" />">
 	
     <title>Comparador Instrumentos Musicales</title>
   </head>
