@@ -16,26 +16,99 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="/comparador/css/estilo.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	
     <title>Comparador Instrumentos Musicales</title>
   </head>
 
   <body>
-    <h1>Comparador</h1>
+    <div class="w3-container w3-center w3-padding-16"" >
+	  <div class="w3-tag w3-jumbo w3-red">C</div>
+	  <div class="w3-tag w3-jumbo">o</div>
+	  <div class="w3-tag w3-jumbo w3-yellow">m</div>
+	  <div class="w3-tag w3-jumbo">p</div>
+	  <div class="w3-tag w3-jumbo w3-red">a</div>
+	  <div class="w3-tag w3-jumbo">r</div>
+	  <div class="w3-tag w3-jumbo w3-yellow">a</div>
+	  <div class="w3-tag w3-jumbo">d</div>
+	  <div class="w3-tag w3-jumbo w3-red">o</div>
+	  <div class="w3-tag w3-jumbo">r</div>
+	</div>
 	
-    <table>
-      <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      </tr>
-      <tr>
-        <td><a href="comparador">Comparador</a></td>
-      </tr>
-    </table>
+	
     <div>
     	<form action="/comparador">
-    		<input type="submit" value="Buscar por palabras clave">
-  			<input type="text" name="keywords" size="13" value="">
+    		
+  			<input class="w3-input w3-border w3-round-xxlarge" placeholder="Intruduzca la consulta"  type="text" name="keywords" size="13" value="">
+  			
     	</form>
     	<div>
+    	
+    	<div class="w3-row">
+		  <div id="columnaEbay" class="w3-col s4 w3-center">
+		  		<div class="w3-tag w3-xlarge w3-orange">Ebay</div>
+		  		
+		  		<c:forEach items="${articulosEbay}" var="resuEbay">
+			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar">
+		                <a href="${resuEbay.galleryUrl}">
+		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
+		                        <header class="w3-container w3-light-grey">
+		                            <h4>Precio:${resuEbay.currentPrice} euros</h4>
+		                        </header>
+		                        <img src="${resuEbay.urlImag}" alt="blabla" style="width:100%">
+		
+		                        <div class="w3-container w3-justify">
+		                            <p>"${resuEbay.title}"</p>
+		                        </div>
+		                    </div>
+		                </a>
+	           	 	</div>
+		  		</c:forEach>
+		  </div>
+		  
+		  <div id="columnaAmazon" class="w3-col s4  w3-center">
+		  		<div class="w3-tag w3-xlarge w3-orange">Amazon</div>
+		  		<c:forEach items="${articulosAmazon}" var="resuAmazon">
+			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar">
+		                <a href="${resuAmazon.galleryUrl}">
+		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
+		                        <header class="w3-container w3-light-grey">
+		                            <h4>Precio:${resuAmazon.currentPrice} euros</h4>
+		                        </header>
+		                        <img src="${resuAmazon.urlImag}" alt="blabla" style="width:100%">
+		
+		                        <div class="w3-container w3-justify">
+		                            <p>"${resuAmazon.title}"</p>
+		                        </div>
+		                    </div>
+		                </a>
+	           	 	</div>
+		  		</c:forEach>
+		  		
+		  </div>
+		  <div id="columnaFnac" class="w3-col s4 w3-center">
+		  		<div class="w3-tag w3-xlarge w3-orange">Fnac</div>
+		  		
+		  		<c:forEach items="${articulosFnac}" var="resuFnac">
+			  		<div class="w3-col s12 m12 l12 w3-padding w3-center w3-navbar">
+		                <a href="${resuFnac.galleryUrl}">
+		                    <div class="w3-card-12 w3-hover-shadow" style="width:100%">
+		                        <header class="w3-container w3-light-grey">
+		                            <h4>Precio:${resuFnac.currentPrice} euros</h4>
+		                        </header>
+		                        <img src="${resuFnac.urlImag}" alt="blabla" style="width:100%">
+		
+		                        <div class="w3-container w3-justify">
+		                            <p>"${resuFnac.title}"</p>
+		                        </div>
+		                    </div>
+		                </a>
+	           	 	</div>
+		  		</c:forEach>
+		  		
+		  </div>
+		</div>
     		<table>
 				<c:forEach items="${articulosEbay}" var="resuEbay">
 					<tr>
