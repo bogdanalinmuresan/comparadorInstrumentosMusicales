@@ -5,6 +5,7 @@ public class BookInfo {
 	public String title;
 	public String currentPrice;
 	public String galleryUrl;
+	public String urlImag;
 	
 	//constructor
 	public BookInfo(){
@@ -12,14 +13,17 @@ public class BookInfo {
 		title="vacio";
 		currentPrice="vacio";
 		galleryUrl="vacio";
+		urlImag=null;
 	}
 	
 	//metodo modificador
-	public void set(String item,String tit,String price,String gallery){
+	public void set(String item,String tit,String price,String gallery,String urlIma){
 		itemId=item;
 		title=tit;
 		currentPrice=price;
 		galleryUrl=gallery;
+		urlImag=urlIma;
+		
 	}
 	public String getTitle(){
 		return title;
@@ -33,6 +37,10 @@ public class BookInfo {
 	}
 	public String getGalleryUrl(){
 		return galleryUrl;
+	}
+	
+	public String getUrlImag(){
+		return urlImag;
 	}
 	
 	

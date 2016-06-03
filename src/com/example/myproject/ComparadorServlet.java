@@ -17,26 +17,30 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.*;
 import com.example.myproject.BookInfo;
+import com.example.myproject.amazonDrive;
 
 @SuppressWarnings("serial")
 public class ComparadorServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		List<BookInfo>resu;
+		List<BookInfo>resuEbay;
+		List<BookInfo>resuFnac;
+		List<BookInfo>resuAmazon;
 		String searchword = req.getParameter("keywords");
 		//System.out.println(searchword);
 		
-        EbayDriver driver = new EbayDriver();
+        EbayDriver driverEbay = new EbayDriver();
+        fnacDriver driverFnac=new fnacDriver();
+        amazonDrive driverAmazon=new amazonDrive();
         String tag = searchword;
        
         try {
-			resu=new ArrayList<BookInfo>(driver.run(java.net.URLEncoder.encode(tag, "UTF-8")));
-			//jsoap
-			//*************	***************//
-        	
-			String url="http://es.aliexpress.com/wholesale?catId=0&initiative_id=SB_20160531110333&SearchText=";
-			url=url.concat(searchword);
-			System.out.println(url);
-
+			resuEbay=new ArrayList<BookInfo>(driverEbay.run(java.net.URLEncoder.encode(tag, "UTF-8")));
+			resuFnac=new ArrayList<BookInfo>(driverFnac.run(java.net.URLEncoder.encode(tag, "UTF-8")));
+			resuAmazon=new ArrayList<BookInfo>(driverAmazon.run(java.net.URLEncoder.encode(tag, "UTF-8")));
+			//String url="http://es.aliexpress.com/wholesale?catId=0&initiative_id=SB_20160531110333&SearchText=";
+			//url=url.concat(searchword);
+		
+			/*
 			Document doc=null;
 			try{
 				doc = Jsoup.connect(url).get();
@@ -50,11 +54,12 @@ public class ComparadorServlet extends HttpServlet {
 				String articulo = item.select(".item").first().html();
 				
 				}
+
+			*/
 			
-			//System.out.println("este es el titulo "+title);
-			
-			
-			req.setAttribute("articulosEbay", resu);
+			req.setAttribute("articulosEbay", resuEbay);
+			req.setAttribute("articulosFnac", resuFnac);
+			req.setAttribute("articulosAmazon", resuAmazon);
 			RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
 			rd.forward(req, resp);
 			

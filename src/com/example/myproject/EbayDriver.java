@@ -106,13 +106,15 @@ public class EbayDriver {
             String galleryUrl = (String) xpath.evaluate("galleryURL", node, XPathConstants.STRING);
             String currentPrice = (String) xpath.evaluate("sellingStatus/currentPrice", node, XPathConstants.STRING);
 
+            /*
             print("currentPrice", currentPrice);
             print("itemId", itemId);
             print("title", title);
             print("galleryUrl", galleryUrl);
+            */
             
             BookInfo book=new BookInfo();
-            book.set(itemUrl, title, currentPrice, galleryUrl);
+            book.set(itemUrl, title, currentPrice, galleryUrl,null);
             res.add(book);
             
             

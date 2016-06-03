@@ -37,14 +37,14 @@
     	</form>
     	<div>
     		<table>
-				<c:forEach items="${articulosEbay}" var="resu">
+				<c:forEach items="${articulosEbay}" var="resuEbay">
 					<tr>
-						<div id="elemento">
-					    	<td><c:out value="${resu.itemId}" /></td>
-					    	<td><c:out value="${resu.title}" /></td>
-					    	<td><c:out value="${resu.currentPrice}" /></td>
-					    	<td><c:out value="${resu.galleryUrl}" /></td> 
-				    	</div>
+						
+					    	<td><c:out value="${resuEbay.itemId}" /></td>
+					    	<td><c:out value="${resuEbay.title}" /></td>
+					    	<td><c:out value="${resuEbay.currentPrice}" /></td>
+					    	<td><c:out value="${resuEbay.galleryUrl}" /></td> 
+				    
 				   	</tr>
 				</c:forEach>
 			</table>
